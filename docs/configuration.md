@@ -170,15 +170,17 @@ Here's a list of all options available for the configuration file:
 
 Option | Description | Possible Values | Default | App-Specific 
 --- | --- | --- | --- | ---
-`backend` | The typing engine used. `Inject` simulate keypresses, `Clipboard` simulates a copy/paste, `Auto` is available on Linux only and combines the two previous. | `Clipboard`, `Inject` or `Auto` (Linux only) | `Inject` on Win and macOS, `Auto` on Linux | Yes
-`backspace_limit` | How many backspace espanso tracks to correct misspelled keywords | int | `3` | No
-`enable_active` | Disable the active mode for the current configuration | `true`/`false` | `true` | Yes
-`enable_passive` | Disable the passive mode for the current configuration | `true`/`false` | `false` | Yes
-`parent` | The target for the current configuration file, mainly used in packages | string | `self` | Yes
-`ipc_server_port` | Windows only. Set the daemon listening port | int | `34982` | No
+`auto_restart` | Automatically restart espanso when a configuration file changes. | `true`/`false` | `true` | No
+`backend` | The typing engine used. `Inject` simulates keypresses, `Clipboard` simulates a copy/paste, `Auto` is available on Linux only and combines the two previous. | `Clipboard`, `Inject` or `Auto` (Linux only) | `Inject` on Win and macOS, `Auto` on Linux | Yes
+`backspace_limit` | How many backspaces espanso tracks to correct misspelled keywords | int | `3` | No
+`enable_active` | Enable/Disable the active mode for the current configuration | `true`/`false` | `true` | Yes
+`enable_passive` | Enable/Disable the passive mode for the current configuration | `true`/`false` | `false` | Yes
 `exclude_default_entries` | Used in app-specific configs, avoid parent matches and global variables | `true`/`false` | `false` | Yes
-`toggle_key` | Change the key used to toggle espanso active mode | `CTRL`, `ALT`, `SHIFT`, `META`, `LEFT_CTRL`, `LEFT_ALT`, `LEFT_SHIFT`, `LEFT_META`, `RIGHT_CTRL`, `RIGHT_ALT`, `RIGHT_SHIFT`, `RIGHT_META`, `OFF`| `ALT` | No
+`fast_inject` | Enable/Disable fast text injection on Linux. If `backend` is set to `Clipboard`, this option will have no effect. Disable this option if you are having compatibility issues. | `true`/`false` | `true` | No
+`ipc_server_port` | Windows only. Set the daemon listening port | int | `34982` | No
+`parent` | The target for the current configuration file, mainly used in packages | string | `self` | Yes
 `passive_key` | Change the key used to trigger passive mode | `CTRL`, `ALT`, `SHIFT`, `META`, `LEFT_CTRL`, `LEFT_ALT`, `LEFT_SHIFT`, `LEFT_META`, `RIGHT_CTRL`, `RIGHT_ALT`, `RIGHT_SHIFT`, `RIGHT_META`, `OFF`| `OFF` | No
-`secure_input_notification` | Enable/Disable the Secure Input notification on macOS | `true`/`false` | `true` | No
+`secure_input_notification` | As a security measure, macOS disables text expansion in sensitive areas such as password fields. When this option is set to `true`, espanso will display a warning when an app has disabled text expansion. | `true`/`false` | `true` | No
 `show_icon` | Show/Hide the icon in the status bar on macOS and Windows | `true`/`false` | `true` | No
-`show_notifications` | Show/Hide the notifications| `true`/`false` | `true` | No
+`show_notifications` | Show/Hide the notifications | `true`/`false` | `true` | No
+`toggle_key` | Change the key used to toggle espanso active mode | `CTRL`, `ALT`, `SHIFT`, `META`, `LEFT_CTRL`, `LEFT_ALT`, `LEFT_SHIFT`, `LEFT_META`, `RIGHT_CTRL`, `RIGHT_ALT`, `RIGHT_SHIFT`, `RIGHT_META`, `OFF`| `ALT` | No
